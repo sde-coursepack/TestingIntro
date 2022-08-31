@@ -7,7 +7,7 @@ public class MaxFunctions {
             else { return c; }
         } else {
             if (b > c) { return b; }
-            else { return a; }
+            else { return c; }
         }
     }
 
