@@ -30,3 +30,4 @@ class NumberChangesTest {
         assertEquals(0, n.getTimesChanged());
     }
 }
+
