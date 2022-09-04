@@ -3,7 +3,7 @@ package edu.virginia.cs.testingintro;
 import java.util.*;
 
 public class MySortedList {
-    private ArrayList<Integer> mySortedList;
+    private final ArrayList<Integer> mySortedList;
     private boolean isSorted;
 
     public MySortedList(ArrayList<Integer> starterList) {
