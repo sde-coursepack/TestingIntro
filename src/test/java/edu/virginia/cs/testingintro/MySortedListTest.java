@@ -15,6 +15,13 @@ class MySortedListTest {
     }
 
     @Test
+    void initiallyEmptyGetThrowsExceptions() {
+        MySortedList myList = new MySortedList();
+        assertThrows(IndexOutOfBoundsException.class,
+                () -> myList.get(0));
+    }
+
+    @Test
     void isEmptyTestInitiallyFalse() {
         ArrayList<Integer> starterList = new ArrayList<>();
         starterList.add(1);
