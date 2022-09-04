@@ -4,9 +4,13 @@ public class NumberChanges {
     private int number;
     private int timesChanged;
 
+    public NumberChanges(int number, int pastChanges) {
+        this.number = number;
+        this.timesChanged = pastChanges;
+    }
+
     public NumberChanges(int x) {
-        this.number = x;
-        this.timesChanged = 0;
+        this(x, 0);
     }
 
     public void setNumber(int newNumber) {

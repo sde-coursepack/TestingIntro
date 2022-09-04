@@ -3,7 +3,7 @@ package edu.virginia.cs.testingintro;
 import java.util.*;
 
 public class MySortedList {
-    private final ArrayList<Integer> mySortedList;
+    private ArrayList<Integer> mySortedList;
     private boolean isSorted;
 
     public MySortedList(ArrayList<Integer> starterList) {
@@ -19,6 +19,11 @@ public class MySortedList {
         return mySortedList.isEmpty();
     }
 
+    public void clear() {
+        mySortedList = new ArrayList<>();
+        isSorted = true;
+    }
+
     public void add(int toAdd) {
         mySortedList.add(toAdd);
         isSorted = false;
@@ -29,6 +34,13 @@ public class MySortedList {
             sortList();
         }
         return mySortedList.get(index);
+    }
+
+    public int find(int target) {
+        if (!isSorted) {
+            sortList();
+        }
+        return mySortedList.indexOf(target);
     }
 
     public int size() {
