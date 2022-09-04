@@ -39,12 +39,4 @@ class MySortedListTest {
         assertEquals(3, myList.get(1), "3 not immediately before 4");
         assertEquals(5, myList.get(3), "5 not immediately after 4");
     }
-
-    @Test
-    void get() {
-    }
-
-    @Test
-    void size() {
-    }
 }
