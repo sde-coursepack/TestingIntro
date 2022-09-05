@@ -8,6 +8,6 @@ public class DoubleImprecision {
             n--;
             x += 0.1;
         }
-        System.out.println("x = " + x);
+        System.out.println("x = " + x); //doesn't print 1.0
     }
 }
