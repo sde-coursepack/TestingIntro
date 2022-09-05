@@ -7,7 +7,7 @@ public class MySortedList {
     private boolean isSorted;
 
     public MySortedList(ArrayList<Integer> starterList) {
-        mySortedList = starterList;
+        mySortedList = new ArrayList<>(starterList);
         isSorted = false;
     }
 
@@ -29,6 +29,13 @@ public class MySortedList {
         isSorted = false;
     }
 
+    public void remove(int index) {
+        if (!isSorted) {
+            sortList();
+        }
+        mySortedList.remove(index);
+    }
+
     public int get(int index) {
         if (!isSorted) {
             sortList();
@@ -41,6 +48,10 @@ public class MySortedList {
             sortList();
         }
         return mySortedList.indexOf(target);
+    }
+
+    public boolean contains(int target) {
+        return mySortedList.contains(target);
     }
 
     public int size() {
