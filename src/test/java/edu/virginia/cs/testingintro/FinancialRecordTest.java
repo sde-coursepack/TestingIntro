@@ -7,35 +7,45 @@ import org.junit.jupiter.api.*;
 
 public class FinancialRecordTest {
 	private static final double tolerance = 1e-4; //if answer is within .01 cents, we're happy
-	private FinancialRecord fr;
+	private StudentFinancialRecord record;
 
 	@BeforeEach
 	public void setup()	{
-		fr = new FinancialRecord();
+		record = new StudentFinancialRecord(1);
 	}
 
 	@Test
 	public void testCalculateBill_LowCourse_BigOverdue_NoExempt() {
-		assertEquals(20350, fr.calculateBill(2, 2500, false), tolerance);
+		record.setOverdue(2500);
+		record.setExempt(false);
+		assertEquals(20350, record.calculateBill(2), tolerance);
 	}
 	
 	@Test
 	public void testCalculateBill_MidCourse_SmallOverdue_YesExempt() {
-		assertEquals(31500, fr.calculateBill(5, 1500, true), tolerance);
+		record.setOverdue(1500);
+		record.setExempt(true);
+		assertEquals(31500, record.calculateBill(5), tolerance);
 	}
 
 	@Test
 	public void testCalculateBill_HighCourse_BigOverdue_NoExempt() {
-		assertEquals(51150, fr.calculateBill(8, 2500, false), tolerance);
+		record.setOverdue(2500);
+		record.setExempt(false);
+		assertEquals(51150, record.calculateBill(8), tolerance);
 	}
 
 	@Test
 	public void testCalculateBill_MidCourse_SmallOverdue_NoExempt() {
-		assertEquals(31650, fr.calculateBill(5, 1500, false), tolerance);
+		record.setOverdue(1500);
+		record.setExempt(true);
+		assertEquals(31650, record.calculateBill(5), tolerance);
 	}
 
 	@Test
 	public void testCalculateBill_MidCourse_BigOverdue_YesExempt() {
-		assertEquals(35500, fr.calculateBill(5, 2500, true), tolerance);
+		record.setOverdue(2500);
+		record.setExempt(true);
+		assertEquals(35500, record.calculateBill(5), tolerance);
 	}
 }
