@@ -50,7 +50,10 @@ public class MySortedList {
         return mySortedList.indexOf(target);
     }
 
-    public boolean contains(int target) {
+    public boolean contains(Object target) {
+        if (!(target instanceof Integer)) {
+            return false;
+        }
         return mySortedList.contains(target);
     }
 
