@@ -15,6 +15,13 @@ public class MySortedList {
         this(new ArrayList<>());
     }
 
+    public ArrayList<Integer> getSortedList() {
+        if (!isSorted) {
+            sortList();
+        }
+        return mySortedList;
+    }
+
     public boolean isEmpty() {
         return mySortedList.isEmpty();
     }

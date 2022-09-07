@@ -1,5 +1,7 @@
 package edu.virginia.cs.testingintro;
 
+import java.util.List;
+
 /**
  * Special thanks to Christian Murphy at Bryn Mawr College for this example
  */

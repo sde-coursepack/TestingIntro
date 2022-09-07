@@ -2,7 +2,7 @@ package edu.virginia.cs.testingintro;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -33,17 +33,15 @@ class MySortedListTest {
     @Test
     void addValueToMiddle() {
         //create starter List
-        ArrayList<Integer> starterList = new ArrayList<>();
-        starterList.add(1);
-        starterList.add(3);
-        starterList.add(5);
+        ArrayList<Integer> starterList = new ArrayList<>(
+                List.of(1, 3, 5));
 
         MySortedList myList = new MySortedList(starterList);
         myList.add(4); //should be added between 3 and 5
 
-        assertEquals(4, myList.size(), "Incorrect size of list");
-        assertEquals(4, myList.get(2), "4 not added at the correct index");
-        assertEquals(3, myList.get(1), "3 not immediately before 4");
-        assertEquals(5, myList.get(3), "5 not immediately after 4");
+        ArrayList<Integer> expectedList = new ArrayList<>(
+                List.of(1, 3, 4, 5));
+
+        assertEquals(expectedList, myList.getSortedList());
     }
 }
