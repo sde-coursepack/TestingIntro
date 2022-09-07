@@ -56,12 +56,16 @@ public class StudentFinancialRecord {
 			return total + overdue;
 		} else if (overdue > 2000) {
 			if (isExempt) {
-				return overdue * 1.1 + total;
+				total *= 1.1;
+				return overdue  + total;
 			} else {
-				return (total + overdue) * 1.1;
+				overdue *= 1.1;
+				total *= 1.1;
+				return total + overdue;
 			}
 		} else {
-			return total + overdue * 1.1;
+			overdue *= 1.1;
+			return total + overdue;
 		}
 	}
 } 
